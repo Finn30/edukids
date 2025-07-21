@@ -15,6 +15,7 @@ class ProgressController extends Controller
             'game_id' => 'required|integer',
             'level' => 'required|integer',
             'completed_tasks' => 'required|integer',
+            'status' => 'required|string'
         ]);
 
         $progress = Progress::updateOrCreate(
@@ -25,6 +26,7 @@ class ProgressController extends Controller
             [
                 'level' => $request->level,
                 'completed_tasks' => $request->completed_tasks,
+                'status' => $request->status,
             ]
         );
 
